@@ -2,14 +2,10 @@
 
 @section('title', 'Dashboard')
 
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
+
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-
-
+  
 
     <div class="container shadow p-3 mb-5 bg-body rounded">
         <div class="row justify-content-center">
