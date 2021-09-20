@@ -44,17 +44,18 @@
                                 </div>
                                 
                                 <div class="col-6 ">
-    
-                                    Nombre:
+                                  
+                                    @foreach( $responsearray as $resarray)
+                                    @endforeach
+                                    Nombre: {{$nombre = $resarray['nombre']}}
                                     <br>
-                                    Cedula:
+                                    Cedula: {{$cedula = $resarray['cedula']}}
                                     <br>
-                                    Sexo:
+                                    Sexo: {{$sexo = $resarray['sexo']}}
                                     <br>
-                                    Fecha de nacimiento:
+                                    Fecha de Nacimiento: {{$fecha1 = $resarray['fecha_nacimiento']}}
                                     <br>
-                                    Fecha de creacion:
-    
+                                    
                                 </div>
     
                             </div>
