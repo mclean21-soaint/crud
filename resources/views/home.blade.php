@@ -47,6 +47,8 @@
                                   
                                     @foreach( $responsearray as $resarray)
                                     @endforeach
+
+                                    @isset($resarray)
                                     Nombre: {{$nombre = $resarray['nombre']}}
                                     <br>
                                     Cedula: {{$cedula = $resarray['cedula']}}
@@ -54,7 +56,10 @@
                                     Sexo: {{$sexo = $resarray['sexo']}}
                                     <br>
                                     Fecha de Nacimiento: {{$fecha1 = $resarray['fecha_nacimiento']}}
-                                    <br>
+                                    <br>  
+                                    @endisset ( )
+                                   
+                                   
                                     
                                 </div>
     
