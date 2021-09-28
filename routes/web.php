@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//agregamos para spatie los siguientes controladores
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RolController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\BlogController;
+/*
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +24,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/home', [App\Http\Controllers\HomeController::class, 'edit'])->name('posthome');
+Route::get('/search', [App\Http\Controllers\searchController::class, 'index'])->name('search');
+Route::post('/search', [App\Http\Controllers\searchController::class, 'edit'])->name('postsearch');
+//Route::get('/usuarios', [App\Http\Controllers\UsuarioController::class, 'index'])->name('usuarios');
+
+//y creamos un grupo de rutas protegidas para los controladores
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles', RolController::class);
+    Route::resource('usuarios', UsuarioController::class);
+    Route::resource('blogs', BlogController::class);
+});
