@@ -68,8 +68,8 @@ return [
     'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => true,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -85,8 +85,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -167,7 +167,7 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
@@ -194,7 +194,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => true,
+    'profile_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -257,7 +257,7 @@ return [
         ],
         [
             'text' => 'change_password',
-            'url'  => '/change_password',
+            'url'  => 'password/reset',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
@@ -268,6 +268,8 @@ return [
             'text'        => 'Consultas-Vac',
             'url'         => '/search',
             'icon'        => 'fas fa-syringe',
+            'can'  => 'ver-search',
+
             //'label'       => 4,
             //'label_color' => 'success',
         ],
@@ -276,6 +278,7 @@ return [
             'text'        => ' users',
             'url'         => '/usuarios',
             'icon'        => 'fas fa-users',
+            'can'  => 'ver-user',
             //'label'       => 4,
             //'label_color' => 'success',
         ],
@@ -284,6 +287,7 @@ return [
             'text'        => ' Roles',
             'url'         => '/roles',
             'icon'        => 'fas fa-user-tag',
+            'can'  => 'ver-rol',
             //'label'       => 4,
             //'label_color' => 'success',
         ],
@@ -292,6 +296,7 @@ return [
             'text'        => ' Permissions',
             'url'         => '/permisos',
             'icon'        => 'fas fa-check-circle',
+            'can'  => 'superadmin',
             //'label'       => 4,
             //'label_color' => 'success',
         ],
@@ -381,7 +386,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

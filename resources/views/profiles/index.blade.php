@@ -2,13 +2,13 @@
 
 @section('title', 'PROFILE USUARIOS')
 
-
+@section('plugins.sweetalert2',true)
 
 @section('content')
 <div class="section-header">
-  <h3 class="page__heading">USERS MANAGEMENT</h3>
+  <h3 class="page__heading">profile USERS MANAGEMENT</h3>
 </div>
-@extends ( ' adminlte :: auth.passwords.reset ' )
+
           <div class="row">
               <div class="col-lg-12">
                   <div class="card">
@@ -64,5 +64,12 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script> 
+
+Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+     </script>
 @stop
