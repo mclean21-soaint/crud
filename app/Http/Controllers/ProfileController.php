@@ -18,7 +18,7 @@ use Illuminate\Support\Arr;
 use Spatie\Permission\Models\Permission;
 
 
-class UsuarioController extends Controller
+class ProfileController extends Controller
 {
 
     function __construct()
@@ -43,7 +43,7 @@ class UsuarioController extends Controller
 
         //Con paginación
         $usuarios = User::paginate(5);
-        return view('usuarios.index',compact('usuarios'));
+        return view('profiles.index',compact('usuarios'));
 
         //al usar esta paginacion, recordar poner en el el index.blade.php este codigo  {!! $usuarios->links() !!}
     }
@@ -57,7 +57,7 @@ class UsuarioController extends Controller
     {
         //aqui trabajamos con name de las tablas de users
         $roles = Role::pluck('name','name')->all();
-        return view('usuarios.crear',compact('roles'));
+        return view('profiles.crear',compact('roles'));
     }
 
     /**
@@ -81,7 +81,7 @@ class UsuarioController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
     
-        return redirect()->route('usuarios.index');
+        return redirect()->route('profiles.index');
     }
 
     /**
@@ -107,7 +107,7 @@ class UsuarioController extends Controller
         $roles = Role::pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
     
-        return view('usuarios.editar',compact('user','roles','userRole'));
+        return view('profiles.editar',compact('user','roles','userRole'));
     }
     
 
@@ -140,7 +140,7 @@ class UsuarioController extends Controller
     
         $user->assignRole($request->input('roles'));
     
-        return redirect()->route('usuarios.index');
+        return redirect()->route('profiles.index');
     }
 
     /**
@@ -152,6 +152,6 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('profiles.index');
     }
 }

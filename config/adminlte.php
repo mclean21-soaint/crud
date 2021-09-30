@@ -65,9 +65,9 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
+    'usermenu_image' => true,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
 
@@ -194,7 +194,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -252,7 +252,7 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => '/edit_profile',
+            'url'  => '/profiles',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -265,7 +265,7 @@ return [
 
         
         [
-            'text'        => ' Consultas-Vac',
+            'text'        => 'Consultas-Vac',
             'url'         => '/search',
             'icon'        => 'fas fa-syringe',
             //'label'       => 4,
