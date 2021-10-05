@@ -7,8 +7,10 @@ use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
-/*
-/*
+use App\Http\Controllers\centros_vcpController;
+
+/* 
+/* 
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -35,5 +37,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('usuarios', UsuarioController::class);
     Route::resource('blogs', BlogController::class);
     Route::resource('profiles', ProfileController::class);
+    Route::resource('centros_vcp ', centros_vcpController::class);
         
 });

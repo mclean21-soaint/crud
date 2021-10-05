@@ -260,20 +260,7 @@ return [
             'url'  => 'password/reset',
             'icon' => 'fas fa-fw fa-lock',
         ],
-
-        ['header' => 'MY OPTIONS'],
-
-        
-        [
-            'text'        => 'Consultas-Vac',
-            'url'         => '/search',
-            'icon'        => 'fas fa-syringe',
-            'can'  => 'ver-search',
-
-            //'label'       => 4,
-            //'label_color' => 'success',
-        ],
-
+          
         [
             'text'        => ' users',
             'url'         => '/usuarios',
@@ -291,16 +278,77 @@ return [
             //'label'       => 4,
             //'label_color' => 'success',
         ],
+        ['header' => 'MY OPTIONS'],
 
+        
         [
-            'text'        => ' Permissions',
-            'url'         => '/permisos',
-            'icon'        => 'fas fa-check-circle',
-            'can'  => 'superadmin',
+            'text'        => 'Consultas-Vac',
+            'url'         => '/search',
+            'icon'        => 'fas fa-syringe',
+            'can'  => 'ver-search',
+
             //'label'       => 4,
             //'label_color' => 'success',
         ],
 
+
+        [
+            'text'        => ' Centros',
+            'url'         => '/centros_vcp',
+            'icon'        => 'fas fa-check-circle',
+            'can'  => 'ver-centro',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => ' Condiciones Especiales',
+            'url'         => '/condiciones_especiales_vcp',
+            'icon'        => 'fas fa-check-circle',
+            'can'  => 'ver-condicion_especial',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => ' Enfermeras',
+            'url'         => '/centros_vcp',
+            'icon'        => 'fas fa-check-circle',
+            'can'  => 'ver-enfermera',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => ' Lista Cronicos',
+            'url'         => '/lista_cronicos_vcp',
+            'icon'        => 'fas fa-check-circle',
+            'can'  => 'ver-cronico',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => ' Vacunas',
+            'url'         => '/Vacunas_vcp',
+            'icon'        => 'fas fa-check-circle',
+            'can'  => 'ver-vacuna',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => ' Vacunados',
+            'url'         => '/vacunados_vcp',
+            'icon'        => 'fas fa-check-circle',
+            'can'  => 'ver-vacunado',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        [
+            'text'        => ' Blog',
+            'url'         => '/blogs',
+            'icon'        => 'fas fa-check-circle',
+            'can'  => 'ver-blog',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+       
 
 
     ],
