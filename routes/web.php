@@ -8,6 +8,9 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\centros_vcpController;
+use App\Http\Controllers\enfermeras_vcpController;
+use App\Http\Controllers\vacunados_vcpController;
+
 
 /* 
 /* 
@@ -38,5 +41,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('blogs', BlogController::class);
     Route::resource('profiles', ProfileController::class);
     Route::resource('centros_vcp ', centros_vcpController::class);
+    Route::resource('enfermeras_vcp ', enfermeras_vcpController::class);
+    Route::resource('vacunados_vcp ', vacunados_vcpController::class);
         
 });

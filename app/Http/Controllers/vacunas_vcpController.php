@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\vacuna;
 
 class vacunas_vcpControler extends Controller
 {
@@ -13,7 +14,9 @@ class vacunas_vcpControler extends Controller
      */
     public function index()
     {
-        //
+        //Con paginación
+        $vacunas = vacuna::paginate(5);
+        return view('vacunas_vcp.index',compact('vacunas'));
     }
 
     /**

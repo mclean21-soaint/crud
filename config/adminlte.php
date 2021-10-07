@@ -310,7 +310,7 @@ return [
         ],
         [
             'text'        => ' Enfermeras',
-            'url'         => '/centros_vcp',
+            'url'         => '/enfermeras_vcp',
             'icon'        => 'fas fa-check-circle',
             'can'  => 'ver-enfermera',
             //'label'       => 4,

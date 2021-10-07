@@ -1,12 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'USUARIOS')
+@section('title', 'Enfermeras')
 
 
 
 @section('content')
 <div class="section-header">
-  <h3 class="page__heading">CENTROS MANAGEMENT</h3>
+  <h3 class="page__heading">ENFERMERAS MANAGEMENT</h3>
 </div>
 
 <div class="section-body">
@@ -16,8 +16,8 @@
                 <div class="card-body">
         
       
-                @can('crear-centros')
-                <a class="btn btn-warning" href="{{ route('centros_vcp.create') }}">Nuevo</a>
+                @can('crear-enfermera')
+                 <!-- <a class="btn btn-warning" href="{ route('enfermeras_vcp.crear') }}">Nuevo</a>-->
                 @endcan
       
                 <table class="table table-striped mt-2">
@@ -28,20 +28,20 @@
                             <th style="color:#fff;">Acciones</th>                                                                   
                       </thead>
                       <tbody>
-                    @foreach ($centros as $centro)
+                    @foreach ($enfermeras as $enfermera)
                     <tr>
-                        <td style="display: none;">{{ $centro->id }}</td>                                
-                        <td>{{ $centro->codigo }}</td>
-                        <td>{{ $centro->centro }}</td>
+                        <td style="display: none;">{{ $enfermera->id }}</td>                                
+                        <td>{{ $enfermera->nombre }}</td>
+                        <td>{{ $enfermera->usuario }}</td>
                         <td>
                             <!-- <form action="{ route('centros_vcp.destroy',$centro->id) }}" method="POST">                                        
-                                @can('editar-centro')
+                                @can('editar-enfermera')
                                 <a class="btn btn-info" href="{ route('centros_vcp.edit',$centro->id) }}">Editar</a>
                                 @endcan
 
                                 @csrf
                                 @method('DELETE')
-                                @can('borrar-centro')
+                                @can('borrar-enfermera')
                                 @endcan
                             </form>  -->
                         </td>
@@ -53,7 +53,7 @@
                 <!-- Ubicamos la paginacion a la derecha -->
                 <div class="pagination justify-content-end">
                  
-                    {!! $centros->links() !!}
+                    {!! $enfermeras->links() !!}
                 </div>
                 </div>
             </div>
@@ -65,7 +65,6 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-    
 @stop
 
 @section('js')

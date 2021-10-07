@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\vacunado;
 
 class vacunados_vcpController extends Controller
 {
@@ -13,7 +14,9 @@ class vacunados_vcpController extends Controller
      */
     public function index()
     {
-        //
+        //Con paginación
+        $vacunados = vacunado::paginate(5);
+        return view('vacunados_vcp.index',compact('vacunados'));
     }
 
     /**
