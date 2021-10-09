@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Vacunados')
+@section('title', 'Enfermeras')
 
 
 
@@ -16,11 +16,11 @@
                 <div class="card-body">
         
       
-                @can('crear-vacunado')
-                <!--<a class="btn btn-warning" href="{ route('vacunados_vcp.crear') }}">Nuevo</a>-->
+                @can('crear-enfermera')
+                 <!-- <a class="btn btn-warning" href="{ route('enfermeras_vcp.crear') }}">Nuevo</a>-->
                 @endcan
       
-                <table class="table table-striped mt-2">
+                <table id="table1"class="table table-striped mt-2">
                         <thead style="background-color:#6777ef">                                     
                             <th style="display: none;">ID</th>
                             <th style="color:#fff;">Titulo</th>
@@ -28,36 +28,31 @@
                             <th style="color:#fff;">Acciones</th>                                                                   
                       </thead>
                       <tbody>
-                    @foreach ($vacunados as $vacunado)
-                    <tr>
-                        <td style="display: none;">{{ $vacunado->id }}</td>                                
-                        <td>{{ $vacunado->fecha }}</td>
-                        <td>{{ $vacunado->cedula}}</td>
-                        <td>{{ $vacunado->nombrefull }}</td>
-                        <td>{{ $vacunado->vacuna_marca }}</td>
-                        <td>{{ $vacunado->dosis }}</td>
-                        <td>
-                            <!-- <form action="{ route('centros_vcp.destroy',$centro->id) }}" method="POST">                                        
-                                @can('editar-vacunado')
-                                <a class="btn btn-info" href="{ route('centros_vcp.edit',$centro->id) }}">Editar</a>
-                                @endcan
-
-                                @csrf
-                                @method('DELETE')
-                                @can('borrar-vacunado')
-                                @endcan
-                            </form>  -->
-                        </td>
-                    </tr>
-                    @endforeach
+                        @foreach ($vacunados as $vacunado)
+                        <tr>
+                                                          
+                           
+                            <td>{{ $vacunado->cedula}}</td>
+                            <td>{{ $vacunado->nombrefull }}</td>
+                            <td>{{ $vacunado->vacuna_marca }}</td>
+                            <td>{{ $vacunado->dosis }}</td>
+                            <td>
+                                <!-- <form action="{ route('centros_vcp.destroy',$centro->id) }}" method="POST">                                        
+                                    @can('editar-vacunado')
+                                    <a class="btn btn-info" href="{ route('centros_vcp.edit',$centro->id) }}">Editar</a>
+                                    @endcan
+    
+                                    @csrf
+                                    @method('DELETE')
+                                    @can('borrar-vacunado')
+                                    @endcan
+                                </form>  -->
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
-                <!-- Ubicamos la paginacion a la derecha -->
-                <div class="pagination justify-content-end">
-                 
-                    {!! $vacunados->links() !!}
-                </div>
                 </div>
             </div>
         </div>
@@ -71,5 +66,9 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+    $(document).ready(function() {
+    $('#table1').DataTable();
+  } );
+    </script>
 @stop

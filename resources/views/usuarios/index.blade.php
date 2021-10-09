@@ -14,7 +14,7 @@
                   <div class="card">
                       <div class="card-body">                           
                           
-                            <table class="table table-striped mt-2">
+                            <table id="table1" class="table table-striped mt-2">
                               <thead style="background-color:#6777ef">                                     
                                   <th style="display: none;">ID</th>
                                   <th style="color:#fff;">Name</th>
@@ -68,9 +68,15 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+
+<script>
+  $(document).ready(function() {
+  $('#table1').DataTable();
+} );
+  </script>
+  
 @stop

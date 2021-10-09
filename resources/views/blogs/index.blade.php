@@ -19,7 +19,7 @@
                 <a class="btn btn-warning" href="{{ route('blogs.create') }}">Nuevo</a>
                 @endcan
     
-                <table class="table table-striped mt-2">
+                <table id="table1" class="table table-striped mt-2">
                         <thead style="background-color:#6777ef">                                     
                             <th style="display: none;">ID</th>
                             <th style="color:#fff;">Titulo</th>
@@ -66,5 +66,9 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+    $(document).ready(function() {
+    $('#table1').DataTable();
+  } );
+    </script>
 @stop

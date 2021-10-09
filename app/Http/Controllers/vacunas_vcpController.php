@@ -15,7 +15,7 @@ class vacunas_vcpControler extends Controller
     public function index()
     {
         //Con paginación
-        $vacunas = vacuna::paginate(5);
+        $vacunas = vacuna::paginate();
         return view('vacunas_vcp.index',compact('vacunas'));
     }
 

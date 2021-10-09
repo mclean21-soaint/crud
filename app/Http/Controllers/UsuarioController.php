@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 //agregamos lo siguiente
 use App\Http\Controllers\Controller;
 use App\Models\User;
+
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -42,7 +43,7 @@ class UsuarioController extends Controller
         return view('usuarios.index',compact('usuarios')); */
 
         //Con paginación
-        $usuarios = User::paginate(5);
+        $usuarios = User::paginate();
         return view('usuarios.index',compact('usuarios'));
 
         //al usar esta paginacion, recordar poner en el el index.blade.php este codigo  {!! $usuarios->links() !!}

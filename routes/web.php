@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/home', [App\Http\Controllers\homeController::class, 'index'])->name('home');
 Route::get('/search', [App\Http\Controllers\searchController::class, 'index'])->name('search');
 Route::post('/search', [App\Http\Controllers\searchController::class, 'edit'])->name('postsearch');
 //Route::get('/usuarios', [App\Http\Controllers\UsuarioController::class, 'index'])->name('usuarios');

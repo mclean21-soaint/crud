@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\enfermera;
+//agregamos
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\DB;
+
 class enfermeras_vcpController extends Controller
 {
     /**
@@ -14,7 +19,7 @@ class enfermeras_vcpController extends Controller
     public function index()
     {
          //Con paginación
-         $enfermeras = enfermera::paginate(5);
+         $enfermeras = enfermera::paginate();
          return view('enfermeras_vcp.index',compact('enfermeras'));
     }
 

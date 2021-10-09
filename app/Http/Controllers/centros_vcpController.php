@@ -30,7 +30,7 @@ class centros_vcpController extends Controller
     public function index()
     {
          //Con paginación
-         $centros = centro::paginate(5);
+         $centros = centro::paginate();
          return view('centros_vcp.index',compact('centros'));
          //al usar esta paginacion, recordar poner en el el index.blade.php este codigo  {!! $blogs->links() 
             //return view('centros_vcp.index');    

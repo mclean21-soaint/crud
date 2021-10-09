@@ -17,7 +17,7 @@
                    
     
             
-                        <table class="table table-striped mt-2">
+                        <table id="table1" class="table table-striped mt-2">
                             <thead style="background-color:#6777ef" >                                                       
                                 <th style="color:#fff;">Role</th>
                                 <th style="color:#fff;">Actions</th>
@@ -46,11 +46,7 @@
                             </tbody>               
                         </table>
 
-                        <!-- Centramos la paginacion a la derecha -->
-                        <div class="pagination justify-content-end">
-                            {!! $roles->links() !!} 
-                        </div>                    
-                        </div>
+                    
                     </div>
                 </div>
             </div>
@@ -65,5 +61,9 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+    $(document).ready(function() {
+    $('#table1').DataTable();
+  } );
+    </script>
 @stop

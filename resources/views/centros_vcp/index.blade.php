@@ -13,6 +13,29 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+               
+
+ <!--botones para download -->
+ <div class="col-sm-12 col-md-6">
+    <div class="dt-buttons btn-group flex-wrap"> <button
+            class="btn btn-secondary buttons-copy buttons-html5" tabindex="0"
+            aria-controls="example1" type="button"><span>Copy</span></button> <button
+            class="btn btn-secondary buttons-csv buttons-html5" tabindex="0"
+            aria-controls="example1" type="button"><span>CSV</span></button> <button
+            class="btn btn-secondary buttons-excel buttons-html5" tabindex="0"
+            aria-controls="example1" type="button"><span>Excel</span></button> <button
+            class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0"
+            aria-controls="example1" type="button"><span>PDF</span></button> <button
+            class="btn btn-secondary buttons-print" tabindex="0"
+            aria-controls="example1" type="button"><span>Print</span></button>
+        <div class="btn-group"><button
+                class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis"
+                tabindex="0" aria-controls="example1" type="button" aria-haspopup="true"
+                aria-expanded="false"><span>Column visibility</span></button></div>
+    </div>
+</div>
+<!--botones para download -->
+
                 <div class="card-body">
         
       
@@ -20,7 +43,7 @@
                 <a class="btn btn-warning" href="{{ route('centros_vcp.create') }}">Nuevo</a>
                 @endcan
       
-                <table class="table table-striped mt-2">
+                <table id="table1" class="table table-striped mt-2">
                         <thead style="background-color:#6777ef">                                     
                             <th style="display: none;">ID</th>
                             <th style="color:#fff;">Titulo</th>
@@ -50,11 +73,8 @@
                     </tbody>
                 </table>
 
-                <!-- Ubicamos la paginacion a la derecha -->
-                <div class="pagination justify-content-end">
-                 
-                    {!! $centros->links() !!}
-                </div>
+                
+                
                 </div>
             </div>
         </div>
@@ -64,10 +84,25 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/b-2.0.1/b-html5-2.0.1/datatables.min.css"/>
+ 
+
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+    $(document).ready(function() {
+    $('#table1').DataTable();
+  } );
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/b-2.0.1/b-html5-2.0.1/datatables.min.js"></script>
+    <script>
+        $(function () {
+          $("#table1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+         
+        });
+      </script>
 @stop
