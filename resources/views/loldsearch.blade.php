@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Consultas')
 
 
 
@@ -46,23 +46,53 @@
                                 </div>
                                 
                                 <div class="col-6 ">
-                                  
-                                    @foreach( $responsearray as $resarray)
-                                    @endforeach
-
-                                    @isset($resarray)
-                                    Nombre: {{$nombre = $resarray['nombre']}}
-                                    <br>
-                                    Cedula: {{$cedula = $resarray['cedula']}}
-                                    <br>
-                                    Sexo: {{$sexo = $resarray['sexo']}}
-                                    <br>
-                                    Fecha de Nacimiento: {{$fecha1 = $resarray['fecha_nacimiento']}}
-                                    <br>  
-                                    @endisset ( )
-                                   
-                                   
                                     
+                                  
+                                  @foreach( $responsearray as $resarray)
+                                  @endforeach
+
+                                  @isset($resarray)
+                                
+                                  <div class="card card-widget widget-user-2 shadow-sm">
+                                    
+                                     
+                                        <!-- .widget-user-image -->
+                                        <h3 class="widget-user-username"> {{$nombre = $resarray['nombre']}}</h3>
+                                        <h5 class="widget-user-desc"> </h5>
+                                      </div>
+                                      <div class="card-footer p-0">
+                                        <ul class="nav flex-column">
+                                          <li class="nav-item">
+                                              <a href="#" class="nav-link">
+                                                  Cedula: {{$cedula = $resarray['cedula']}} <span class="float-right badge bg-primary">31</span>
+                                              </a>
+                                            </li>  
+                                          <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                              Nacionalidad <span class="float-right badge bg-primary">31</span>
+                                            </a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                              Sexo: {{$sexo = $resarray['sexo']}} <span class="float-right badge bg-info">5</span>
+                                            </a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                              Fecha de Nacimiento: {{$fecha1 = $resarray['fecha_nacimiento']}} <span class="float-right badge bg-success">12</span>
+                                            </a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                              Followers <span class="float-right badge bg-danger">842</span>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+
+                                    @endisset ( )
+                                 
                                 </div>
     
                             </div>
@@ -83,7 +113,7 @@
     
     <br>
     
-        <table class="table table-hover table-sm" >
+        <table class="table table-hover table-sm .text-sm)" >
             <thead>
                 <tr style="background-color:#6777ef">
                     <th style="color:#fff;"scope="col">#{{$cont=0}}</th>
@@ -125,6 +155,8 @@
             </tbody>
         </table>
     </div>
+
+
 
 
 

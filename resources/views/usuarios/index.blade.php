@@ -36,6 +36,13 @@
                                         @endforeach
                                       @endif
                                     </td>
+                                    
+                                    <td><div class="form-group">
+                                      <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1" value="true">
+                                        <label class="custom-control-label" for="customSwitch1">On / Off</label>
+                                      </div>
+                                    </div></td>
 
                                     <td>                                  
                                       <a class="btn btn-info" href="{{ route('usuarios.edit',$usuario->id) }}"><i class="fas fa-edit"></i> Edit</a>
@@ -56,6 +63,7 @@
                             
                       </div>
                   </div>
+                  
            
 @stop
 

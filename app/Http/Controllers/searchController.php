@@ -26,7 +26,7 @@ class searchController extends Controller
     {
       
         $responsearray=[];
-        return view('search',compact('responsearray'));
+        return view('search.index',compact('responsearray'));
     }
 
     public function edit()
@@ -37,7 +37,8 @@ class searchController extends Controller
         $response = Http::get($getstrg);
         
         $responsearray=$response->json();
+       
 
-        return view('search',compact('responsearray'));
+        return view('search.index',compact('responsearray'));
     }
 }
