@@ -31,16 +31,33 @@
     
                                     <form action="{{ route('postsearch')}}" method="post">
                                         @csrf
+                                      
+
                                         
                                             <label for="validationCustom01" class="form-label">Cedula o Pasaporte</label>
-                                            <input type="text" class="form-control" id="validationCustom01"
+                                            <!--estilo para el input--> 
+                                        <div class="input-group">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text bg-info">
+                                              <i class="fas fa-id-card-alt"></i>
+                                            </span>
+                                          </div>
+                                          <input type="text" class="form-control" id="validationCustom01"
                                                 name="validationCustom01" required>
     
+                                          <div class="input-group-append">
+                                            <div class="input-group-text bg-success">
+                                              <i class="fas fa-search-plus"></i>
+                                            </div>
+                                          </div>
+                                        </div>
+
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
-                                         <button class="btn btn-primary" type="submit">Search</button>
-                                       
+                                            <br>
+                                         <button class="btn btn-primary " type="submit">Search</button>
+                                          
                                     </form>
     
                                 </div>

@@ -57,6 +57,12 @@
                         <td>{{ $centro->codigo }}</td>
                         <td>{{ $centro->centro }}</td>
                         <td>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                          </div>
+                        </td>
+                        <td>
                             <!-- <form action="{ route('centros_vcp.destroy',$centro->id) }}" method="POST">                                        
                                 @can('editar-centro')
                                 <a class="btn btn-info" href="{ route('centros_vcp.edit',$centro->id) }}">Editar</a>

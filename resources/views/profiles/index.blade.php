@@ -8,6 +8,22 @@
 <div class="section-header">
   <h3 class="page__heading">profile USERS MANAGEMENT</h3>
 </div>
+         
+        
+{{-- With custom text using data-* config --}}
+<x-adminlte-input-switch name="iswText" data-on-text="On" data-off-text="Off"
+data-on-color="teal" checked/>
+    
+{{-- Label, and prepend icon --}}
+<x-adminlte-input-switch name="iswPrepend" label="Switch">
+    <x-slot name="prependSlot">
+        <div class="input-group-text bg-lightblue">
+            <i class="fas fa-toggle-on"></i>
+        </div>
+    </x-slot>
+
+    
+</x-adminlte-input-switch>
 
           <div class="row">
               <div class="col-lg-12">

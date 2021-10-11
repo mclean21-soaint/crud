@@ -285,7 +285,7 @@ return [
             'text'        => 'Consultas-Vac',
             'url'         => '/search',
             'icon'        => 'fas fa-syringe',
-            'can'  => 'ver-search',
+            'can'         => 'ver-search',
 
             //'label'       => 4,
             //'label_color' => 'success',
@@ -388,58 +388,53 @@ return [
     */
 
     'plugins' => [
+        'BootstrapSwitch' => [
+        'active' => true,
+        'files' => [
+            [
+                'type' => 'js',
+                'asset' => true,
+                'location' => 'vendor/bootstrap-switch/js/bootstrap-switch.min.js',
+            ],
+           
+        ],
+    ],
         'Datatables' => [
-            'active' => true,
+            'active' => false,
             'files' => [
-                [
-                    'type' => 'js',
-                    'asset' => true,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
-                ],
-                [
-                    'type' => 'js',
-                    'asset' => true,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
-                ],
+               
+
+//********************************************************* */
+//  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/cr-1.5.4/date-1.1.1/kt-2.6.4/sb-1.2.2/sp-1.4.0/datatables.min.css"/>
+ 
+//  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+//  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+//  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/cr-1.5.4/date-1.1.1/kt-2.6.4/sb-1.2.2/sp-1.4.0/datatables.min.js"></script>
+
+[
+    'type' => 'js',
+    'asset' => false,
+    'location' => '//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/cr-1.5.4/date-1.1.1/kt-2.6.4/sb-1.2.2/sp-1.4.0/datatables.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => false,
+    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js',
+],
+[
+    'type' => 'js',
+    'asset' => false,
+    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js',
+],
+[
+    'type' => 'css',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/cr-1.5.4/date-1.1.1/kt-2.6.4/sb-1.2.2/sp-1.4.0/datatables.min.css',
+],
 
 
-
-
-
-
-
-                [
-                    'type' => 'js',
-                    'asset' => true,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js',
-                ],
-                [
-                    'type' => 'js',
-                    'asset' => true,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js',
-                ],
-                [
-                    'type' => 'js',
-                    'asset' => true,
-                    'location' => '//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/datatables.min.js',
-                ],
-
-
-
-
-
-
-                [
-                    'type' => 'css',
-                    'asset' => true,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
-                ],
-
-                [
-                    'type' => 'css',
-                    'asset' => true,
-                    'location' => '//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/datatables.min.css',
-                ],
+//************************************************************************ */
+               
             ],
         ],
         'Select2' => [
@@ -472,7 +467,7 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
                 ],
             ],
