@@ -60,7 +60,7 @@ background-repeat: no-repeat;">
     <table id="table1" class="table table-striped table-hover"style="width:100%">
       <thead style="background-color:rgb(0, 46, 77)">                                     
           <th style="color:#fff;">ID</th>
-          <th style="color:#fff;">Nombre</th>
+          <th style="color:#fff;">Nombres</th>
           <th style="color:#fff;">Codigo</th>
           <th style="color:#fff;">Tipo</th>                                      
           <th style="color:#fff;">
