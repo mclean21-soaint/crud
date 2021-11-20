@@ -23,7 +23,7 @@ class BlogController extends Controller
     public function index()
     {       
          //Con paginación
-         $blogs = Blog::paginate();
+         $blogs = Blog::all();
          return view('blogs.index',compact('blogs'));
          //al usar esta paginacion, recordar poner en el el index.blade.php este codigo  {!! $blogs->links() !!}    
     }

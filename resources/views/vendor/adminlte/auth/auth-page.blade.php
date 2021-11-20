@@ -11,6 +11,16 @@
 @section('adminlte_css')
     @stack('css')
     @yield('css')
+    <style>
+        body {
+  height: 400px;
+  background-image: url("https://image.freepik.com/vector-gratis/fondo-cristal-azul-degradado-roto-abstracto_23-2148273609.jpg");
+background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+    </style>
+    
 @stop
 
 @section('classes_body'){{ ($auth_type ?? 'login') . '-page' }}@stop

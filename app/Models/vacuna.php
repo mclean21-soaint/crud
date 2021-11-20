@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vacuna extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table ='vacunas_vcp';
 
 }

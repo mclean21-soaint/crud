@@ -12,11 +12,12 @@ use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\DB;
 
 
+
 class centros_vcpController extends Controller
 {
     function __construct()
     {
-         $this->middleware('permission:ver-centro|crear-centro|editar-centro|borrar-centro')->only('index');
+         $this->middleware('permission:ver-centro|crear-centro|editar-centro|borrar-centro', ['only' => ['index','btn','api']]);
          $this->middleware('permission:crear-centro', ['only' => ['create','store']]);
          $this->middleware('permission:editar-centro', ['only' => ['edit','update']]);
          $this->middleware('permission:borrar-centro', ['only' => ['destroy']]);
@@ -30,8 +31,9 @@ class centros_vcpController extends Controller
     public function index()
     {
          //Con paginación
-         $centros = centro::paginate();
-         return view('centros_vcp.index',compact('centros'));
+         //$centro = centro::all();
+         return view('centros_vcp.index'); //->with('centro', $centro);
+      
          //al usar esta paginacion, recordar poner en el el index.blade.php este codigo  {!! $blogs->links() 
             //return view('centros_vcp.index');    
     }
@@ -43,7 +45,8 @@ class centros_vcpController extends Controller
      */
     public function create()
     {
-        //
+       
+        return view('centros_vcp.crear');
     }
 
     /**
@@ -54,7 +57,27 @@ class centros_vcpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
+        request()->validate([
+            'codigo' => 'required',
+            'centro' => 'required',
+        ]);
+        $centro=new centro();
+        $centro->codigo = $request->get('codigo');
+        $centro->centro = $request->get('centro');
+        $centro->geolon = $request->get('geolon');
+        $centro->geolat = $request->get('geolat');
+        $centro->despacho = $request->get('despacho');
+        $centro->recepcion = $request->get('recepcion');
+        $centro->provincia = $request->get('provincia');
+        $centro->distrito = $request->get('distrito');
+        $centro->corregimiento = $request->get('corregimiento');
+        $centro->circuito = $request->get('circuito');
+        $centro->codigo_corregimiento = $request->get('codigo_corregimiento');
+        $centro->borrado = $request->get('borrado');
+        $centro->save();
+    
+        return redirect()->route('centros_vcp.index');
     }
 
     /**
@@ -63,9 +86,21 @@ class centros_vcpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id )
     {
-        //
+         // Buscamos el id en la tabla
+         $centro = centro::find($id);
+         // retornamos la vista con los datos 
+        
+         return view('centros_vcp.show')->with('centro', $centro);
+         // with() nos permite pasar variables a la vista
+         // el primer parámetros es el nombre con el que estará disponible en la vista
+         // el segundo son los datos. 
+        
+        
+        //$centro = $centro;
+        //$cent = centro::all();
+        //return view('centros_vcp.show', compact('cent'));
     }
 
     /**
@@ -76,7 +111,8 @@ class centros_vcpController extends Controller
      */
     public function edit($id)
     {
-        //
+        $centro = centro::find($id);
+        return view('centros_vcp.editar')->with('centro', $centro);
     }
 
     /**
@@ -86,10 +122,27 @@ class centros_vcpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  $id)
     {
-        //
-    }
+     
+        
+        $centro = centro::find($id);
+        
+        $centro->centro = $request->get('centro');
+        $centro->geolon = $request->get('geolon');
+        $centro->geolat = $request->get('geolat');
+        $centro->despacho = $request->get('despacho');
+        $centro->recepcion = $request->get('recepcion');
+        $centro->provincia = $request->get('provincia');
+        $centro->distrito = $request->get('distrito');
+        $centro->corregimiento = $request->get('corregimiento');
+        $centro->circuito = $request->get('circuito');
+        $centro->codigo_corregimiento = $request->get('codigo_corregimiento');
+        $centro->borrado = $request->get('borrado');
+        $centro->save();
+    
+        return redirect()->route('centros_vcp.index');
+   }
 
     /**
      * Remove the specified resource from storage.
@@ -97,8 +150,10 @@ class centros_vcpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(centro $centro)
+    public function destroy($id)
     {
-        //
+        $centro = centro::find($id);
+        $centro->delete();
+        //return redirect()->route('/centros_vcp');
     }
 }

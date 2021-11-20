@@ -1,12 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'USUARIOS')
+@section('title', 'BLOGS')
 
 
 
 @section('content')
 <div class="section-header">
-  <h3 class="page__heading">USERS MANAGEMENT</h3>
+  <h3 class="page__heading">BLOGS MANAGEMENT</h3>
 </div>
 
 <div class="section-body">

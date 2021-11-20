@@ -30,8 +30,8 @@ return [
     |
     */
 
-    'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_ico_only' => true,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -223,9 +223,11 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
     */
+    
 
     'menu' => [
         
+
         // Navbar items:
         [
             'type'         => 'navbar-search',
@@ -284,7 +286,7 @@ return [
         [
             'text'        => 'Consultas-Vac',
             'url'         => '/search',
-            'icon'        => 'fas fa-syringe',
+            'icon'        => 'fab fa-searchengin',
             'can'         => 'ver-search',
 
             //'label'       => 4,
@@ -295,7 +297,7 @@ return [
         [
             'text'        => ' Centros',
             'url'         => '/centros_vcp',
-            'icon'        => 'fas fa-check-circle',
+            'icon'        => 'fas fa-clinic-medical',
             'can'  => 'ver-centro',
             //'label'       => 4,
             //'label_color' => 'success',
@@ -303,7 +305,7 @@ return [
         [
             'text'        => ' Condiciones Especiales',
             'url'         => '/condiciones_especiales_vcp',
-            'icon'        => 'fas fa-check-circle',
+            'icon'        => 'fas fa-hand-holding-medical',
             'can'  => 'ver-condicion_especial',
             //'label'       => 4,
             //'label_color' => 'success',
@@ -311,23 +313,23 @@ return [
         [
             'text'        => ' Enfermeras',
             'url'         => '/enfermeras_vcp',
-            'icon'        => 'fas fa-check-circle',
+            'icon'        => 'fas fa-briefcase-medical',
             'can'  => 'ver-enfermera',
             //'label'       => 4,
             //'label_color' => 'success',
         ],
         [
             'text'        => ' Lista Cronicos',
-            'url'         => '/lista_cronicos_vcp',
-            'icon'        => 'fas fa-check-circle',
+            'url'         => '/cronicos_vcp',
+            'icon'        => 'fas fa-file-medical',
             'can'  => 'ver-cronico',
             //'label'       => 4,
             //'label_color' => 'success',
         ],
         [
             'text'        => ' Vacunas',
-            'url'         => '/Vacunas_vcp',
-            'icon'        => 'fas fa-check-circle',
+            'url'         => '/vacunas_vcp',
+            'icon'        => 'fas fa-syringe',
             'can'  => 'ver-vacuna',
             //'label'       => 4,
             //'label_color' => 'success',
@@ -335,13 +337,13 @@ return [
         [
             'text'        => ' Vacunados',
             'url'         => '/vacunados_vcp',
-            'icon'        => 'fas fa-check-circle',
+            'icon'        => 'fas fa-notes-medical',
             'can'  => 'ver-vacunado',
             //'label'       => 4,
             //'label_color' => 'success',
         ],
         [
-            'text'        => ' Blog',
+            'text'        => ' Note pad',
             'url'         => '/blogs',
             'icon'        => 'fas fa-check-circle',
             'can'  => 'ver-blog',
@@ -388,6 +390,8 @@ return [
     */
 
     'plugins' => [
+
+        
         'BootstrapSwitch' => [
         'active' => true,
         'files' => [
@@ -400,7 +404,7 @@ return [
         ],
     ],
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                
 
@@ -413,32 +417,97 @@ return [
 
 [
     'type' => 'js',
-    'asset' => false,
-    'location' => '//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/cr-1.5.4/date-1.1.1/kt-2.6.4/sb-1.2.2/sp-1.4.0/datatables.min.js',
+    'asset' => true,
+    'location' => '//code.jquery.com/jquery-3.5.1.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js',
 ],
 [
     'type' => 'js',
     'asset' => false,
-    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js',
+    'location' => '//cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js',
 ],
 [
     'type' => 'js',
-    'asset' => false,
-    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap5.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js',
+],
+[
+    'type' => 'js',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js',
+],
+
+[
+    'type' => 'css',
+    'asset' => true,
+    'location' => '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css',
 ],
 [
     'type' => 'css',
     'asset' => true,
-    'location' => '//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/b-print-2.0.1/cr-1.5.4/date-1.1.1/kt-2.6.4/sb-1.2.2/sp-1.4.0/datatables.min.css',
+    'location' => '//cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css',
 ],
-
+[
+    'type' => 'css',
+    'asset' => true,
+    'location' => '//cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css',
+],
 
 //************************************************************************ */
                
             ],
         ],
         'Select2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

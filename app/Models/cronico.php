@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class cronico extends Model
 {
     use HasFactory;
-    protected $table ='cronico_vcp';
+    public $timestamps = false;
+    protected $table ='lista_cronicos_vcp';
 
 }
